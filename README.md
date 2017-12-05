@@ -6,19 +6,15 @@
 * [Plugins](#plugins)
 * [Accounts](#accounts)
 * [Contacts](#contacts)
+* [D3 v4 roadmap](#d3-v4-roadmap)
+* [Static content](#static-content)
+* [Docker](#docker)
 * [Remaining questions](#remaining-questions)
 
-* External plugins
 * Proxies
-
-* Content maintained by Denise
-* d3v4 roadmap
-* Circle CI
 * Library
-* Docker
 * Blogs
 * Genome browser
-
 
 ## Release procedure
 ### Major/minor release
@@ -72,15 +68,30 @@ The webapp uses plugins written by the Open Targets team and by other parties, w
 ## Accounts
 Open Targets uses the following accounts.
   * Piwik - Usage statistics
+  * Circle CI - Unit testing/linting
   * Ghost Inspector - End-to-end testing
   * Netlify - Webapp hosting and DNS mapping
 
 ## Contacts
-The following people are useful contacts in other EBI teams. Many have worked on the widgets provided by their respective teams and used in Open Targets.
+The following people are useful contacts in other EBI teams. Many have worked on the plugins provided by their respective teams and used in Open Targets.
 * Uniprot - Xavier Watkins
 * Reactome - Antonio Fabregat
 * Expression Atlas - Alfonso Munoz Pomer
 * ChEMBL - Patricia Vento
+
+## D3 v4 roadmap
+Most plugins have a branch which supports version 4.0 of `d3`. The `bubblesView` is the main outstanding plugin requiring support.
+
+## Static content
+Other members of the Open Targets team occasionally need to update static content. This seems to be mainly done by Denise, affecting pages such as:
+* `variants`
+* `scoring`
+* `faq`
+* `data-sources`
+* `about`
+
+## Docker
+There is a `Dockerfile` and `docker-entrypoint.sh` in the webapp repository, but these are not used in the public site, which is hosted on Netlify. They should nonetheless be kept for other instances and for users wishing to run their own version locally.
 
 ## Remaining questions
 
