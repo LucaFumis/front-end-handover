@@ -8,13 +8,11 @@
 * [Contacts](#contacts)
 * [D3 v4 roadmap](#d3-v4-roadmap)
 * [Static content](#static-content)
+* [Proxies](#proxies)
 * [Docker](#docker)
+* [Blogs](#blogs)
+* [Library](#library)
 * [Remaining questions](#remaining-questions)
-
-* Proxies
-* Library
-* Blogs
-* Genome browser
 
 ## Release procedure
 ### Major/minor release
@@ -43,6 +41,7 @@ The API documentation is managed by the back-end. Front-end loads the `swagger.y
 The webapp uses plugins written by the Open Targets team and by other parties, which are here divided into *internal* and *external*.
 
 ### Internal
+We have access to all of these and can modify if necessary.
 * `cttv.api`
 * `cttv.diseaseGraph`
 * `cttv.flowerView`
@@ -61,6 +60,7 @@ The webapp uses plugins written by the Open Targets team and by other parties, w
 * `tntvis`
 
 ### External
+With the exception of `bio-pv`, there is a [contact](#contacts) at EBI with whom these can be discussed.
 * `bio-pv`
 * `reactome`
 * `expression-atlas-heatmap`
@@ -90,8 +90,20 @@ Other members of the Open Targets team occasionally need to update static conten
 * `data-sources`
 * `about`
 
+## Proxies
+The Open Targets REST API supports proxying of calls to Ensembl, Expression Atlas, PDB and EuropePMC. Such calls take the form `{api}/proxy/{external-call}`, for example:
+```
+http://www.targetvalidation.org/proxy/rest.ensembl.org/lookup/id/ENSG00000157764?content-type=application/json
+```
+
 ## Docker
 There is a `Dockerfile` and `docker-entrypoint.sh` in the webapp repository, but these are not used in the public site, which is hosted on Netlify. They should nonetheless be kept for other instances and for users wishing to run their own version locally.
+
+## Blogs
+The existing blog is hosted by the back-end (Eliseo specifically) and uses Ghost. There is a plan to move it to use Medium.
+
+## Library
+It is likely that the Open Targets Library front-end will not be kept long-term, but the data will be used in the webapp.
 
 ## Remaining questions
 
